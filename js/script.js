@@ -1,4 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // -------------------------------------------------------
+    // ROTATING TEXT ANIMATION (vanilla reimplementation)
+    // -------------------------------------------------------
+    const rotatingEl = document.getElementById('rotatingText');
+    if (rotatingEl) {
+        const texts = JSON.parse(rotatingEl.dataset.texts);
+        const ROTATION_INTERVAL = 2000;
+        const STAGGER_DURATION = 25;
+        let currentIndex = 0;
+
+        const splitChars = (text) => {
+            if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+                const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
+                return Array.from(seg.segment(text), s => s.segment);
+            }
+            return Array.from(text);
+        };
+
+        const buildChars = (text) => {
+            const chars = splitChars(text);
+            return chars.map((ch, i) => {
+                const span = document.createElement('span');
+                span.className = 'rotating-text-char enter';
+                span.textContent = ch;
+                return { el: span, index: i, total: chars.length };
+            });
+        };
+
+        const getDelay = (index, total) => (total - 1 - index) * STAGGER_DURATION;
+
+        const animateIn = (charObjs) => {
+            charObjs.forEach(({ el, index, total }) => {
+                const delay = getDelay(index, total);
+                setTimeout(() => {
+                    el.classList.remove('enter');
+                    el.classList.add('enter-active');
+                }, delay + 20);
+            });
+        };
+
+        const animateOut = () => {
+            const current = rotatingEl.querySelectorAll('.rotating-text-char.enter-active');
+            current.forEach(el => {
+                el.classList.remove('enter-active');
+                el.classList.add('exit');
+                void el.offsetWidth;
+                el.classList.add('exit-active');
+            });
+            setTimeout(() => {
+                current.forEach(el => el.remove());
+            }, 400);
+        };
+
+        const setWord = (text) => {
+            const charObjs = buildChars(text);
+            charObjs.forEach(({ el }) => rotatingEl.appendChild(el));
+            requestAnimationFrame(() => animateIn(charObjs));
+        };
+
+        const rotate = () => {
+            animateOut();
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % texts.length;
+                setWord(texts[currentIndex]);
+            }, 350);
+        };
+
+        // Initialize with first word (visible immediately)
+        splitChars(texts[0]).forEach(ch => {
+            const span = document.createElement('span');
+            span.className = 'rotating-text-char enter-active';
+            span.textContent = ch;
+            rotatingEl.appendChild(span);
+        });
+
+        setInterval(rotate, ROTATION_INTERVAL);
+    }
+
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
