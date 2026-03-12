@@ -79,6 +79,8 @@
 
     <!-- Page Header (Replacing Hero) -->
     <section class="page-header" style="padding: 150px 0 50px; background-color: var(--color-primary-dark); text-align: center; color: white;">
+        <div class="branch-overlay"></div>
+        <div class="branch-overlay left"></div>
         <div class="container">
             <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Premium Landscaping Services</h1>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">Comprehensive design, hardscaping, and maintenance solutions tailored to your property.</p>
@@ -93,60 +95,71 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="services-grid">
+            <div class="services-timeline" id="servicesTimeline">
+                <div class="timeline-branch" id="timelineBranch"></div>
+
                 <!-- Service 1 -->
-                <div class="service-card reveal-up" style="transition-delay: 0.1s;">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Design & Planning</h3>
-                        <p>Comprehensive landscape design and planning tailored to your property and lifestyle.</p>
+                <div class="timeline-item left">
+                    <div class="service-card reveal-timeline">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Design & Planning</h3>
+                            <p>Comprehensive landscape design and planning tailored to your property and lifestyle.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-card reveal-up" style="transition-delay: 0.2s;">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Hardscaping</h3>
-                        <p>Durable and stunning Pavers & Patios, and custom Retaining Walls built to last.</p>
+                <div class="timeline-item right">
+                    <div class="service-card reveal-timeline">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Hardscaping</h3>
+                            <p>Durable and stunning Pavers & Patios, and custom Retaining Walls built to last.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service-card reveal-up" style="transition-delay: 0.3s;">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-leaf"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Planting & Ground Cover</h3>
-                        <p>Sod/Rock Installation, Mulch Beds & Edging, and beautiful Gravel & Mulch solutions.</p>
+                <div class="timeline-item left">
+                    <div class="service-card reveal-timeline">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><i class="fa-solid fa-leaf"></i></div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Planting & Ground Cover</h3>
+                            <p>Sod/Rock Installation, Mulch Beds & Edging, and beautiful Gravel & Mulch solutions.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="service-card reveal-up" style="transition-delay: 0.4s;">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Systems & Enhancements</h3>
-                        <p>Smart Irrigation Systems and elegant Outdoor Lighting to enhance your property day and night.
-                        </p>
+                <div class="timeline-item right">
+                    <div class="service-card reveal-timeline">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Systems & Enhancements</h3>
+                            <p>Smart Irrigation Systems and elegant Outdoor Lighting to enhance your property day and night.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="service-card reveal-up" style="transition-delay: 0.5s;">
-                    <div class="service-icon-wrapper">
-                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Maintenance</h3>
-                        <p>Comprehensive Seasonal Clean-Ups to keep your landscape looking pristine year-round.</p>
+                <div class="timeline-item left">
+                    <div class="service-card reveal-timeline">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Maintenance</h3>
+                            <p>Comprehensive Seasonal Clean-Ups to keep your landscape looking pristine year-round.</p>
+                        </div>
                     </div>
                 </div>
             </div>

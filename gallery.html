@@ -79,6 +79,8 @@
 
     <!-- Page Header (Replacing Hero) -->
     <section class="page-header" style="padding: 150px 0 50px; background-color: var(--color-primary-dark); text-align: center; color: white;">
+        <div class="branch-overlay"></div>
+        <div class="branch-overlay left"></div>
         <div class="container">
             <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Project Gallery</h1>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">Take a look at some of our recent landscaping, hardscaping, and design projects.</p>
@@ -93,52 +95,22 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item reveal-up" style="transition-delay: 0.1s;">
-                    <img src="fotos/ELK/1.png" alt="Landscaping Project 1" class="gallery-img">
+            <div class="gallery-slideshow-container reveal-up" id="gallerySlideshow">
+                <button class="gallery-nav-btn prev-btn" id="galleryPrevBtn" aria-label="Previous Image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="gallery-slideshow-viewport" id="galleryViewport">
+                    <!-- Images will be injected here via JavaScript -->
                 </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.2s;">
-                    <img src="fotos/ELK/2.png" alt="Landscaping Project 2" class="gallery-img">
+
+                <div class="gallery-indicators" id="galleryIndicators">
+                    <!-- Dots will be injected here via JavaScript -->
                 </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.3s;">
-                    <img src="fotos/ELK/3.png" alt="Landscaping Project 3" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.4s;">
-                    <img src="fotos/ELK/4.png" alt="Landscaping Project 4" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.5s;">
-                    <img src="fotos/ELK/5.png" alt="Landscaping Project 5" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.6s;">
-                    <img src="fotos/ELK/6.png" alt="Landscaping Project 6" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.1s;">
-                    <img src="fotos/ELK/7.png" alt="Landscaping Project 7" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.2s;">
-                    <img src="fotos/ELK/8.png" alt="Landscaping Project 8" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.3s;">
-                    <img src="fotos/ELK/9.png" alt="Landscaping Project 9" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.4s;">
-                    <img src="fotos/ELK/10.png" alt="Landscaping Project 10" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.5s;">
-                    <img src="fotos/ELK/11.png" alt="Landscaping Project 11" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.6s;">
-                    <img src="fotos/ELK/12.png" alt="Landscaping Project 12" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.1s;">
-                    <img src="fotos/ELK/13.png" alt="Landscaping Project 13" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.2s;">
-                    <img src="fotos/ELK/14.png" alt="Landscaping Project 14" class="gallery-img">
-                </div>
-                <div class="gallery-item reveal-up" style="transition-delay: 0.3s;">
-                    <img src="fotos/ELK/15.png" alt="Landscaping Project 15" class="gallery-img">
-                </div>
+
+                <button class="gallery-nav-btn next-btn" id="galleryNextBtn" aria-label="Next Image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
