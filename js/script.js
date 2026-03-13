@@ -2,18 +2,7 @@
 // PAGE SLIDE TRANSITIONS
 // -------------------------------------------------------
 (function () {
-    // Kick off the enter animation immediately when the script runs
-    document.documentElement.classList.add('page-loading');
-    window.addEventListener('DOMContentLoaded', function () {
-        document.body.classList.add('page-entering');
-        // Remove the class after the animation ends so it doesn't replay
-        document.body.addEventListener('animationend', function onEnterEnd(e) {
-            if (e.animationName === 'pageSlideIn') {
-                document.body.classList.remove('page-entering');
-                document.body.removeEventListener('animationend', onEnterEnd);
-            }
-        });
-    });
+    // (Enter animation is now handled purely in CSS)
 
     // Intercept internal link clicks for the exit animation
     document.addEventListener('click', function (e) {

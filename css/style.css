@@ -122,12 +122,13 @@ img {
 .btn-primary {
     background-color: var(--color-accent);
     color: var(--color-primary-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
     background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -417,6 +418,7 @@ img {
   --color-background: var(--color-primary);
   --color-background-hover: var(--color-primary-dark);
   --color-outline: rgba(31, 54, 34, 0.4);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 .nav-call-btn:active {
@@ -677,6 +679,7 @@ img {
     display: flex;
     align-items: center;
     padding-top: 100px;
+    padding-bottom: 80px;
     background-image: url('../images/hero_sunny_white_house.png');
     background-size: cover;
     background-position: center;
@@ -829,7 +832,7 @@ img {
 .hero-cta-group {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
@@ -1428,6 +1431,7 @@ img {
     will-change: transform;
     image-rendering: auto;
     -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* The "front-facing" image gets a subtle glow */
@@ -1723,12 +1727,23 @@ img {
     margin-bottom: 24px;
 }
 
-.contact-form {
+.contact-form,
+.contact-info-card {
     background: rgba(255, 255, 255, 0.12);
     padding: 50px 45px;
-    border-radius: 8px 45% 8px 45%;
     border: 2px solid rgba(212, 175, 55, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    height: 100%; /* Ensure both cards are same height if content allows */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+    border-radius: 8px 45% 8px 45%;
+}
+
+.contact-info-card {
+    border-radius: 45% 8px 45% 8px; /* Mirrored leaf shape */
 }
 
 .form-group {
@@ -1824,6 +1839,14 @@ img {
     font-size: 0.9rem;
 }
 
+.contact-section {
+    background-color: var(--color-primary-dark);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cline x1='20' y1='12' x2='20' y2='28' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='0.06'/%3E%3Cline x1='12' y1='20' x2='28' y2='20' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' opacity='0.06'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    color: var(--color-text-light);
+    padding: 70px 0;
+}
+
 /* =========================================
    CTA BANNER
    ========================================= */
@@ -1859,9 +1882,37 @@ img {
    MEDIA QUERIES FOR SECTIONS
    ========================================= */
 @media (max-width: 992px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .footer-brand {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-branding {
+        justify-content: center;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-links a, 
+    .contact-list li {
+        justify-content: center;
     }
 }
 
@@ -1910,15 +1961,12 @@ img {
 }
 
 body {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-body.page-entering {
-    opacity: 0; /* Start hidden */
+    opacity: 1; /* Fallback for browsers without animation support */
     will-change: transform, opacity, filter;
     animation: pageSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
+
+/* We don't need .page-entering anymore, it's the default state */
 
 body.page-exiting {
     will-change: transform, opacity, filter;

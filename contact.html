@@ -115,10 +115,47 @@
         </div>
     </section>
 
-    <!-- Footer & Contact -->
-    <footer id="contact" class="footer">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" style="padding: 100px 0;">
         <div class="container">
-            <div class="footer-grid" style="grid-template-columns: 1.5fr 1fr 1.5fr; align-items: start;">
+            <div class="footer-grid" style="grid-template-columns: 1fr 1fr; align-items: start; border-bottom: none; padding-bottom: 0;">
+
+                <!-- Column 1: Contact Info -->
+                <div class="reveal-up">
+                    <div class="contact-info-card">
+                        <h3 style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-accent); margin-bottom: 24px;">Contact Us</h3>
+                        <ul class="contact-list" style="margin-bottom: 30px;">
+                            <li><i class="fa-solid fa-phone"></i><a href="tel:+12084404965">+1 (208) 440-4965</a></li>
+                            <li><i class="fa-solid fa-envelope"></i><a href="mailto:elklegacylandscaping@gmail.com">elklegacylandscaping@gmail.com</a></li>
+                            <li><i class="fa-solid fa-location-dot"></i><span>Serving the Treasure Valley, Idaho</span></li>
+                            <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 7am – 6pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Contact Form -->
+                <div class="footer-form reveal-up" style="transition-delay: 0.1s;">
+                    <div class="contact-form">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-accent); margin-bottom: 24px;">Send us a Message</h4>
+                        <form id="contactForm">
+                            <input type="text" name="_gotcha" style="display:none" tabIndex="-1" autocomplete="off" />
+                            <div class="form-group"><input type="text" id="name" name="name" placeholder="Name" required></div>
+                            <div class="form-group"><input type="email" id="email" name="email" placeholder="Email" required></div>
+                            <div class="form-group"><input type="tel" id="phone" name="phone" placeholder="Phone Number" required></div>
+                            <div class="form-group"><textarea id="project" name="project" placeholder="Tell us about your project" rows="4" required></textarea></div>
+                            <button type="submit" class="btn btn-primary btn-submit">Submit Request</button>
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
 
                 <!-- Column 1: Brand -->
                 <div class="footer-brand reveal-up">
@@ -127,12 +164,6 @@
                         <h3 class="footer-company-name">Elk Legacy</h3>
                     </div>
                     <p class="footer-desc">Delivering premium landscape services and quality craftsmanship to the Treasure Valley. Licensed, insured, and committed to excellence.</p>
-                    <ul class="contact-list">
-                        <li><i class="fa-solid fa-phone"></i><a href="tel:+12084404965">+1 (208) 440-4965</a></li>
-                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:elklegacylandscaping@gmail.com">elklegacylandscaping@gmail.com</a></li>
-                        <li><i class="fa-solid fa-location-dot"></i><span>Serving the Treasure Valley, Idaho</span></li>
-                        <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 7am – 6pm</span></li>
-                    </ul>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=61587080534733" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
                             <i class="fa-brands fa-facebook"></i>
@@ -148,21 +179,31 @@
                         <li><a href="services.html">Our Expertise</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html">Get a Free Quote</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Contact Form -->
-                <div class="footer-form reveal-up" style="transition-delay: 0.2s;">
-                    <h4>Get in Touch</h4>
-                    <form id="contactForm" class="contact-form">
-                        <input type="text" name="_gotcha" style="display:none" tabIndex="-1" autocomplete="off" />
-                        <div class="form-group"><input type="text" id="name" name="name" placeholder="Name" required></div>
-                        <div class="form-group"><input type="email" id="email" name="email" placeholder="Email" required></div>
-                        <div class="form-group"><input type="tel" id="phone" name="phone" placeholder="Phone Number" required></div>
-                        <div class="form-group"><textarea id="project" name="project" placeholder="Tell us about your project" rows="4" required></textarea></div>
-                        <button type="submit" class="btn btn-primary btn-submit">Submit Request</button>
-                        <div id="formStatus" class="form-status"></div>
-                    </form>
+                <!-- Column 3: Contact -->
+                <div class="footer-col reveal-up" style="transition-delay:0.2s">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+12084404965">+1 (208) 440-4965</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:elklegacylandscaping@gmail.com">elklegacylandscaping@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Serving the Treasure Valley, Idaho</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Mon–Sat: 7am – 6pm</span>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
