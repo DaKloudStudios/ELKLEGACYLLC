@@ -1,4 +1,47 @@
+// -------------------------------------------------------
+// PAGE SLIDE TRANSITIONS
+// -------------------------------------------------------
+(function () {
+    // Kick off the enter animation immediately when the script runs
+    document.documentElement.classList.add('page-loading');
+    window.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('page-entering');
+        // Remove the class after the animation ends so it doesn't replay
+        document.body.addEventListener('animationend', function onEnterEnd(e) {
+            if (e.animationName === 'pageSlideIn') {
+                document.body.classList.remove('page-entering');
+                document.body.removeEventListener('animationend', onEnterEnd);
+            }
+        });
+    });
+
+    // Intercept internal link clicks for the exit animation
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a[href]');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        // Skip: external, hash-only, tel:, mailto:, or already-current page
+        if (
+            !href ||
+            href.startsWith('#') ||
+            href.startsWith('tel:') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('http') ||
+            link.target === '_blank'
+        ) return;
+
+        e.preventDefault();
+        document.body.classList.add('page-exiting');
+
+        setTimeout(function () {
+            window.location.href = href;
+        }, 500); // matches pageSlideOut duration
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
     // -------------------------------------------------------
     // ROTATING TEXT ANIMATION (vanilla reimplementation)
     // -------------------------------------------------------

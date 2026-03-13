@@ -48,6 +48,7 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--color-primary-dark);
 }
 
 body {
@@ -1877,4 +1878,42 @@ img {
     .section-title h2 {
         font-size: 2rem;
     }
+}
+
+/* =========================================
+   PAGE SLIDE TRANSITIONS
+   ========================================= */
+@keyframes pageSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes pageSlideOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.02);
+        filter: blur(10px);
+    }
+}
+
+body.page-entering {
+    animation: pageSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+body.page-exiting {
+    animation: pageSlideOut 0.5s cubic-bezier(0.4, 0, 1, 1) both;
+    pointer-events: none;
 }
