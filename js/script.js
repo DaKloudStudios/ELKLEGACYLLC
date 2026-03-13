@@ -36,7 +36,7 @@
 
         setTimeout(function () {
             window.location.href = href;
-        }, 500); // matches pageSlideOut duration
+        }, 400); // Trigger slightly before animation ends to mask load time
     });
 })();
 

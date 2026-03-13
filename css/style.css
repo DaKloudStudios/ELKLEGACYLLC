@@ -1887,7 +1887,7 @@ img {
     from {
         opacity: 0;
         transform: scale(0.98);
-        filter: blur(10px);
+        filter: blur(5px);
     }
     to {
         opacity: 1;
@@ -1905,15 +1905,23 @@ img {
     to {
         opacity: 0;
         transform: scale(1.02);
-        filter: blur(10px);
+        filter: blur(5px);
     }
 }
 
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 body.page-entering {
-    animation: pageSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+    opacity: 0; /* Start hidden */
+    will-change: transform, opacity, filter;
+    animation: pageSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 body.page-exiting {
-    animation: pageSlideOut 0.5s cubic-bezier(0.4, 0, 1, 1) both;
+    will-change: transform, opacity, filter;
+    animation: pageSlideOut 0.4s cubic-bezier(0.4, 0, 1, 1) both;
     pointer-events: none;
 }
