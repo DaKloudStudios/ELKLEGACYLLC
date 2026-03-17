@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const formData = new FormData(contactForm);
 
-                const response = await fetch('https://formsubmit.co/ajax/Heritageplumbingpros+website@gmail.com', {
+                const response = await fetch('https://www.myinvoks.com/api/submit/cmmmhi5au00013qx68vcsqkyr', {
                     method: 'POST',
                     body: formData,
                     headers: {
